@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let a = 10;
 let b = 5;
 console.log("Addition:", a + b);
@@ -26,3 +27,4 @@ console.log("Is Adult:", isAdult);
 console.log("Is Student:", isStudent);
 console.log("Both conditions:", isAdult && isStudent);
 console.log("Either condition:", isAdult || isStudent);
+//# sourceMappingURL=hello.js.map

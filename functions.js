@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 1. Function with Parameters and Explicit Return Type
 function greet(name) {
     return `Hello, ${name}!`;
@@ -7,14 +8,14 @@ function greet(name) {
 function calculatePrice(price, tax = 10) {
     return price + (price * tax) / 100;
 }
-// 3. Function with Optional Parameter (?)
+// 3. Function with Optional Parameter
 function displayStudent(name, age) {
     if (age !== undefined) {
         return `Student Name: ${name}, Age: ${age}`;
     }
     return `Student Name: ${name}`;
 }
-// 4. Function with Rest Parameters (...)
+// 4. Function with Rest Parameters 
 function addNumbers(...numbers) {
     let sum = 0;
     for (let num of numbers) {
@@ -33,3 +34,4 @@ console.log(displayStudent("Anjali"));
 console.log(displayStudent("Kiran", 20));
 console.log("\n4. Rest Parameter");
 console.log(`Sum: ${addNumbers(10, 20, 30, 40, 50)}`);
+//# sourceMappingURL=functions.js.map

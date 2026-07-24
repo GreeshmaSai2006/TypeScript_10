@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let bikename = "Scooty";
 let year = 2000;
 let price = 40000;
@@ -11,3 +12,4 @@ const summary = getBikeStatus(bikename, year, price);
 console.log(summary);
 console.log(`Starring: ${companynames.join(",")}`);
 console.log(`is it gives high milaze? ${ismilaze ? "Yes" : "No"}`);
+//# sourceMappingURL=annotations.js.map

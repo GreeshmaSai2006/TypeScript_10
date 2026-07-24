@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 1. Traditional Named Function (The Full Form)
 function add(a, b) {
     return a + b;
@@ -16,3 +17,4 @@ console.log("\n2. Arrow Function (The Concise Form)");
 console.log(`Multiplication: ${multiply(10, 20)}`);
 console.log("\n3. Shorthand Arrow Function");
 console.log(`Square: ${square(5)}`);
+//# sourceMappingURL=arrow.js.map

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let g = 45;
 g = "Hi"; // OK
 console.log(g);
@@ -12,3 +13,4 @@ function logNotification(message) {
     console.log("ALERT:" + message);
 }
 logNotification("Setup Completed");
+//# sourceMappingURL=specials.js.map

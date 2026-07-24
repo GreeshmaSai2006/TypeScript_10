@@ -5,6 +5,8 @@ function add(a: number, b: number): number {
 }
 
 // 2. Arrow Function (The Concise Form)
+
+
 const multiply = (a: number, b: number): number => {
     return a * b;
 };

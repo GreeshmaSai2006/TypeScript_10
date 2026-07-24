@@ -1,0 +1,18 @@
+let a: number = 12;
+let b: number = 18;
+
+let x = a;
+let y = b;
+
+// Find GCD using Euclidean Algorithm
+while (y !== 0) {
+    let temp = y;
+    y = x % y;
+    x = temp;
+}
+
+let gcd = x;
+let lcm = (a * b) / gcd;
+
+console.log("GCD =", gcd);
+console.log("LCM =", lcm);
