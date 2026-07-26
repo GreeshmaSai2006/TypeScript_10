@@ -7,6 +7,7 @@ class Library {
         this.bookTitle = bookTitle;
         this.secretCode = secretCode;
         this.totalBooks = totalBooks;
+        
     }
 
     displayDetails(): void {
