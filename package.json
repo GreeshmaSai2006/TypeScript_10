@@ -1,16 +1,16 @@
 {
-  "name": "greeshmafsd2",
+  "name": "express_project",
   "version": "1.0.0",
   "description": "",
-  "main": "Number.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^7.0.2"
-    
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
