@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Management Portal</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href=  "mongodb://vakkalagaddagreeshma2006_db_user:2aQWkPnjqQSy78R5@ac-d0zyata-shard-00-00.eglbcrr.mongodb.net:27017,ac-d0zyata-shard-00-01.eglbcrr.mongodb.net:27017,ac-d0zyata-shard-00-02.eglbcrr.mongodb.net:27017/?ssl=true&replicaSet=atlas-nijcph-shard-0&authSource=admin&appName=Cluster0";
+ rel="stylesheet">
 
   <style>
     :root {
