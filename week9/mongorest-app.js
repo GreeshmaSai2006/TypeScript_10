@@ -1,16 +1,17 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 
-// MongoDB Atlas connection
+// MongoDB connection
+const dbURI =
+  "mongodb://vakkalagaddagreeshma2006_db_user:2aQWkPnjqQSy78R5@ac-d0zyata-shard-00-00.eglbcrr.mongodb.net:27017,ac-d0zyata-shard-00-01.eglbcrr.mongodb.net:27017,ac-d0zyata-shard-00-02.eglbcrr.mongodb.net:27017/?ssl=true&replicaSet=atlas-nijcph-shard-0&authSource=admin&appName=Cluster0";
+
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(dbURI)
   .then(() => {
     console.log("MongoDB Atlas connected successfully");
   })
@@ -18,7 +19,7 @@ mongoose
     console.error("MongoDB connection error:", error);
   });
 
-// Schema
+// Student schema
 const studentSchema = new mongoose.Schema(
   {
     name: {
@@ -26,13 +27,11 @@ const studentSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
-
     age: {
       type: Number,
       required: true,
       min: 1
     },
-
     course: {
       type: String,
       required: true,
@@ -44,18 +43,13 @@ const studentSchema = new mongoose.Schema(
   }
 );
 
-// Model
+// Student model
 const Student = mongoose.model("Student", studentSchema);
 
-// =====================================================
-// CREATE - Add a new student
-// POST /students
-// =====================================================
-
+// Create student
 app.post("/students", async (req, res) => {
   try {
     const student = new Student(req.body);
-
     const savedStudent = await student.save();
 
     res.status(201).json(savedStudent);
@@ -66,11 +60,7 @@ app.post("/students", async (req, res) => {
   }
 });
 
-// =====================================================
-// READ - Get all students
-// GET /students
-// =====================================================
-
+// Get all students
 app.get("/students", async (req, res) => {
   try {
     const students = await Student.find();
@@ -83,11 +73,7 @@ app.get("/students", async (req, res) => {
   }
 });
 
-// =====================================================
-// READ - Get one student by ID
-// GET /students/:id
-// =====================================================
-
+// Get student by ID
 app.get("/students/:id", async (req, res) => {
   try {
     const student = await Student.findById(req.params.id);
@@ -106,11 +92,7 @@ app.get("/students/:id", async (req, res) => {
   }
 });
 
-// =====================================================
-// UPDATE - Update a student by ID
-// PUT /students/:id
-// =====================================================
-
+// Update student
 app.put("/students/:id", async (req, res) => {
   try {
     const student = await Student.findByIdAndUpdate(
@@ -136,11 +118,7 @@ app.put("/students/:id", async (req, res) => {
   }
 });
 
-// =====================================================
-// DELETE - Delete a student by ID
-// DELETE /students/:id
-// =====================================================
-
+// Delete student
 app.delete("/students/:id", async (req, res) => {
   try {
     const student = await Student.findByIdAndDelete(req.params.id);
@@ -161,22 +139,15 @@ app.delete("/students/:id", async (req, res) => {
   }
 });
 
-// =====================================================
 // Default route
-// GET /
-// =====================================================
-
 app.get("/", (req, res) => {
   res.json({
     message: "Student API is running"
   });
 });
 
-// =====================================================
 // Start server
-// =====================================================
-
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
